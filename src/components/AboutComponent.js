@@ -6,10 +6,12 @@ import { baseUrl } from '../shared/baseUrl';
 import { Fade, Stagger } from 'react-animation-components';
 
 function RenderLeader({leader}) {
+    const src = `${baseUrl}${leader.image}`;
+
     return(
         <Media tag="li">
             <Media left middle>
-                <Media object src={baseUrl + leader.image} alt={leader.name} />
+                <Media object src={src} alt={leader.name} style={{width:'106px'}} />
             </Media>
             <Media body className="ml-5">
                 <Media heading>{leader.name}</Media>

@@ -275,7 +275,9 @@ export const loginUser = (creds) => (dispatch) => {
             throw error;
         }
     })
-    .catch(error => dispatch(loginError(error.message)))
+    .catch(error => {
+        return dispatch(loginError(error.message))
+    })
 };
 
 export const requestLogout = () => {
