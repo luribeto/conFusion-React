@@ -49,6 +49,8 @@ export const postComment = (dishId, rating, comment) => (dispatch) => {
 export const fetchDishes = () => (dispatch) => {
     dispatch(dishesLoading(true));
 
+    console.log('baseURL>>>', process.env['REACT_APP_BASE_URL']);
+
     return fetch(baseUrl + 'dishes')
         .then(response => {
             if (response.ok) {
